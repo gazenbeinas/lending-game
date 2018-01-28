@@ -1,0 +1,49 @@
+﻿@using LendingGame.Application.ViewModels
+@model LoanViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes do empréstimo</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FriendId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Friend.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GameId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BorrowedGame.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LoanDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Voltar para lista</a>
+</div>

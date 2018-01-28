@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LendingGame.Application\LendingGame.Application.csproj" />
+    <ProjectReference Include="..\LendingGame.Data\LendingGame.Data.csproj" />
+    <ProjectReference Include="..\LendingGame.Domain\LendingGame.Domain.csproj" />
+    <ProjectReference Include="..\LendingGame.Infra.Identity\LendingGame.Infra.Identity.csproj" />
+    <ProjectReference Include="..\LendingGame.Infra.IoC\LendingGame.Infra.IoC.csproj" />
+  </ItemGroup>
+
+  
+
+</Project>

@@ -1,0 +1,30 @@
+@using LendingGame.Infra.Identity.Services.Interfaces
+
+@inject IAuthenticationService AuthenticationService
+@inject IUserService UserService
+
+@if (AuthenticationService.IsSignedIn(User))
+{
+<ul class="nav navbar-nav">
+    <li><a asp-area="" asp-controller="Friend" asp-action="Index">Amigos</a></li>
+    <li><a asp-area="" asp-controller="Game" asp-action="Index">Jogos</a></li>
+    <li><a asp-area="" asp-controller="Loan" asp-action="Index">Empr&eacute;stimos</a></li>
+</ul>
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <span class="navbar-brand ">Conta: @UserService.GetUserName(User)</span>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Sair</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
